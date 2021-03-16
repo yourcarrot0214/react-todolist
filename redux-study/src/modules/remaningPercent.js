@@ -15,7 +15,7 @@ const calculateSeconds = ({ hours, minutes, seconds }) => {
   return result.toFixed(1);
 };
 
-const printToPercentage = (string) => `오늘이 ${string}% 남았습니다.`;
+const printToPercentage = (string) => `오늘 하루는 ${string}% 남았습니다.`;
 
 const compose = (...fns) => (arg) =>
   fns.reduce((composed, Fn) => Fn(composed), arg);
@@ -27,6 +27,4 @@ export const remaningPercentage = compose(
 );
 
 // test code
-// console.log(
-//   compose(currentTime, calculateSeconds, printToPercentage)(new Date())
-// );
+// console.log(remaningPercentage(new Date()));

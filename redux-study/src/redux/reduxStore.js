@@ -10,39 +10,29 @@ const options = {
 
 const initialState = {
   date: new Date().toLocaleDateString("ko-KR", options),
-  todos: [
-    {
-      id: 0,
-      text: "hello",
-      done: false,
-      start: { hours: 12, minutes: 57 },
-      end: {},
-      lapse: {},
-    },
-    {
-      id: 1,
-      text: "HI",
-      done: false,
-      start: { hours: 14, minutes: 21 },
-      end: {},
-      lapse: {},
-    },
-  ],
 };
 
 // store setup
-const store = createStore(combineReducers({ date, todos }), initialState);
+const store = createStore(
+  combineReducers({ date, todos }),
+  localStorage["DayLine-store"]
+    ? JSON.parse(localStorage["DayLine-store"])
+    : initialState
+);
 
 // store.subscribe
-// store.subscribe(() => console.log("store updated : ", store.getState()));
+store.subscribe(
+  () => (localStorage["DayLine-store"] = JSON.stringify(store.getState()))
+);
 
 export default store;
 
 /*
-  Day Line Store setup
-
-  initialState
-  - date: {hours, minutes}
-  - newDate: [{start, end}]
+  Day Line Store
+    1. date
+      - 현재 시각을 문자열로 변환하여 저장한다.
+    2. todos
+      - todo를 저장하는 배열
+      - {id, text, done, start, end, lapse}
 
 */

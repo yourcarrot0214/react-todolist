@@ -3,6 +3,7 @@ import { addTodo, editTodo, removeTodo, completeTodo } from "./actions.js";
 import Clock from "../components/Clock.jsx";
 import Todolist from "../components/Todolist.jsx";
 import Todo from "../components/Todo.jsx";
+import TodoForm from "../components/TodoForm.jsx";
 
 // mapDispatchToProps
 const mapDispatchTodoAction = (dispatch) => ({
@@ -19,11 +20,9 @@ const mapStateDateToProps = (state) => ({ date: state.date });
 const mapStateTodosToProps = (state) => ({ todos: [...state.todos] });
 
 export const ClockConnecter = connect(mapStateDateToProps, null)(Clock);
-export const TodolistConnecter = connect(
-  mapStateTodosToProps,
-  mapDispatchTodoAction
-)(Todolist);
+export const TodolistConnecter = connect(mapStateTodosToProps, null)(Todolist);
 export const TodoConnecter = connect(null, mapDispatchTodoAction)(Todo);
+export const TodoFormConnecter = connect(null, mapDispatchTodoAction)(TodoForm);
 
 /*
   mapStateToProps

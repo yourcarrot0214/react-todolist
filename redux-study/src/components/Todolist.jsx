@@ -1,43 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { TodoConnecter } from "../redux/containers.js";
+import { TodoConnecter, TodoFormConnecter } from "../redux/containers.js";
 
 const TodolistContainer = styled.div`
-  width: 400px;
-  border: 5px solid black;
-
-  p {
-    line-height: 2rem;
-    :hover {
-      background-color: white;
-    }
-  }
+  flex: 1;
+  padding: 20px 32px;
+  padding-bottom: 48px;
+  overflow-y: auto;
 `;
 
-const Todolist = ({ todos, addTodo }) => {
-  // Todolist에서는 todos만 받고, Todo.jsx를 map으로 반환한다.
-  // Todo.jsx에 props로 todo action을 전달한다.
-  const [Text, setText] = useState("");
-  const getTextValue = (e) => {
-    setText(e.currentTarget.value);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    addTodo(Text);
-    setText("");
-  };
-
+const Todolist = ({ todos }) => {
   return (
     <TodolistContainer>
       <h3>Todolist</h3>
       {todos.map((todo) => (
         <TodoConnecter key={todo.id} todo={todo} />
       ))}
-      <form onSubmit={onSubmit}>
-        <input type="text" value={Text} name="todo" onChange={getTextValue} />
-        <input type="submit" value="등록하기" />
-      </form>
+      <TodoFormConnecter />
     </TodolistContainer>
   );
 };
