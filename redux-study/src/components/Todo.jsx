@@ -74,12 +74,34 @@ const Text = styled.div`
     css`
       color: #ced4da;
     `}
+  ${(props) =>
+    props.editmode &&
+    css`
+      display: none;
+    `}
+`;
+
+const InsertForm = styled.form``;
+
+const EditInput = styled.input`
+  display: none;
+  flex: 1;
+  outline: none;
+  font-size: 21px;
+  border: none;
+  ${(props) =>
+    props.editmode &&
+    css`
+      display: inline-block;
+    `}
 `;
 
 const Todo = (props) => {
-  const { todo } = props;
+  const { todo, editTodo } = props;
 
   const [CheckBox, setCheckBox] = useState(false);
+  const [EditMode, setEditMode] = useState(false);
+  const [EditText, setEditText] = useState(todo.text);
 
   const convertedLaptime = (laptime) => {
     const { hours, minutes } = laptime;
@@ -96,8 +118,21 @@ const Todo = (props) => {
     }
   };
 
+  const onChangeValue = (e) => {
+    setEditText(e.target.value);
+  };
+
   const onEditTodo = () => {
-    props.editTodo(props.todo.id, "test edit");
+    setEditMode(!EditMode);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (todo.text === EditText) setEditMode(!EditMode);
+    else {
+      editTodo(props.todo.id, EditText);
+      setEditMode(!EditMode);
+    }
   };
 
   const onCompleteTodo = () => {
@@ -122,7 +157,18 @@ const Todo = (props) => {
         <CheckCircle onClick={onCompleteTodo} done={todo.done}>
           {todo.done && <MdDone />}
         </CheckCircle>
-        <Text done={todo.done}>{todo.text}</Text>
+        <Text editmode={EditMode} done={todo.done}>
+          {todo.text}
+        </Text>
+        <InsertForm onSubmit={onSubmit}>
+          <EditInput
+            editmode={EditMode}
+            onChange={onChangeValue}
+            value={EditText}
+            placeholder={todo.text}
+            autoFocus
+          />
+        </InsertForm>
         <FcButton>
           <MdDelete onClick={onRemoveTodo} />
         </FcButton>
