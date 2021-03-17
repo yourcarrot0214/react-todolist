@@ -20,11 +20,19 @@ const printToPercentage = (string) => `오늘 하루는 ${string}% 남았습니�
 const compose = (...fns) => (arg) =>
   fns.reduce((composed, Fn) => Fn(composed), arg);
 
+// test code
+// console.log(remaningPercentage(new Date()));
 export const remaningPercentage = compose(
   currentTime,
   calculateSeconds,
   printToPercentage
 );
 
+const appendZero = (date) => ({
+  hours: date.hours < 10 ? Number("0" + date.hours) : date.hours,
+  minutes: date.minutes < 10 ? Number(date.minutes + "0") : date.minutes,
+});
+
 // test code
-// console.log(remaningPercentage(new Date()));
+// console.log(convertedTime(new Date()));
+export const convertedTime = compose(currentTime, appendZero);

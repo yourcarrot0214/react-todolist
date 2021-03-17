@@ -113,9 +113,3 @@ const TodoForm = (props) => {
 };
 
 export default React.memo(TodoForm);
-
-/*
-  기능구현목표
-    - 입력창을 열고 닫는 버튼을 구현한다.
-    - 입력창에 입력된 text는 store로 dispatch 된다.
-*/

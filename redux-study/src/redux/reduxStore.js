@@ -20,19 +20,9 @@ const store = createStore(
     : initialState
 );
 
-// store.subscribe
+// localStorage sync
 store.subscribe(
   () => (localStorage["DayLine-store"] = JSON.stringify(store.getState()))
 );
 
 export default store;
-
-/*
-  Day Line Store
-    1. date
-      - 현재 시각을 문자열로 변환하여 저장한다.
-    2. todos
-      - todo를 저장하는 배열
-      - {id, text, done, start, end, lapse}
-
-*/

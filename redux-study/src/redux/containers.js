@@ -23,12 +23,3 @@ export const ClockConnecter = connect(mapStateDateToProps, null)(Clock);
 export const TodolistConnecter = connect(mapStateTodosToProps, null)(Todolist);
 export const TodoConnecter = connect(null, mapDispatchTodoAction)(Todo);
 export const TodoFormConnecter = connect(null, mapDispatchTodoAction)(TodoForm);
-
-/*
-  mapStateToProps
-  - 현재 시각을 객체 정보에 담아 표현 컴포넌트에 넘겨주는 함수
-
-  mapDispatchToProps
-  - 현재 시간을 구하는 함수.
-  - 표현 컴포넌트에서 이 함수를 활용하여 1분마다 dispatch.
-*/

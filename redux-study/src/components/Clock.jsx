@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { remaningPercentage } from "../modules/remaningPercent.js";
+import { remaningPercentage } from "../modules/timeFactory.js";
 
 const ClockContainer = styled.div`
   padding-top: 48px;
@@ -46,14 +46,3 @@ const Clock = (props) => {
 };
 
 export default React.memo(Clock);
-
-/*
-    1. date
-      - 연월일 요일을 출력한다.
-    
-    2. clock
-      - 현재 시간을 출력한다.
-    
-    3. percentage
-      - 남은 시간을 percentage로 출력한다.
-*/
