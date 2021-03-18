@@ -33,6 +33,12 @@ const AppContainer = styled.div`
     height: 520px;
     margin-top: 16px;
   }
+
+  @media ${(props) => props.theme.tabletS} {
+    width: 720px;
+    height: 950px;
+    margin-top: 24px;
+  }
 `;
 
 function App() {
