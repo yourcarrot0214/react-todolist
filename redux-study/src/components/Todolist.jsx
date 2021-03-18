@@ -7,6 +7,10 @@ const TodolistContainer = styled.div`
   padding: 20px 32px;
   padding-bottom: 48px;
   overflow-y: auto;
+
+  @media ${(props) => props.theme.mobile} {
+    padding: 12px 12px;
+  }
 `;
 
 const Todolist = ({ todos }) => {

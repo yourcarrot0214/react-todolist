@@ -27,6 +27,12 @@ const AppContainer = styled.div`
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
+
+  @media ${(props) => props.theme.mobile} {
+    width: 300px;
+    height: 520px;
+    margin-top: 16px;
+  }
 `;
 
 function App() {

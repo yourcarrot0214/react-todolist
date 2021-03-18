@@ -26,6 +26,24 @@ const ClockContainer = styled.div`
     font-weight: bold;
     height: 1rem;
   }
+
+  @media ${(props) => props.theme.mobile} {
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 6px;
+    h1 {
+      font-size: 24px;
+    }
+    .day {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+    .percentage {
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+  }
 `;
 
 const Clock = (props) => {

@@ -44,6 +44,12 @@ const CircleButton = styled.button`
       }
       transform: translate(-50%, 50%) rotate(45deg);
     `}
+
+  @media ${(props) => props.theme.mobile} {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
 `;
 
 const InsertFormPositioner = styled.div`
@@ -63,6 +69,13 @@ const InsertForm = styled.form`
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   border-top: 1px solid #e9ecef;
+
+  @media ${(props) => props.theme.mobile} {
+    padding-left: 12px;
+    padding-top: 20px;
+    padding-right: 12px;
+    padding-bottom: 30px;
+  }
 `;
 
 const Input = styled.input`
@@ -73,6 +86,11 @@ const Input = styled.input`
   outline: none;
   font-size: 18px;
   box-sizing: border-box;
+
+  @media ${(props) => props.theme.mobile} {
+    padding: 8px;
+    font-size: 14px;
+  }
 `;
 
 const TodoForm = (props) => {

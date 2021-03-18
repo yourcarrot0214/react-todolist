@@ -14,6 +14,10 @@ const FcButton = styled.div`
     color: #ff6b6b;
   }
   display: none;
+
+  @media ${(props) => props.theme.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const TimeTag = styled.div`
@@ -23,6 +27,12 @@ const TimeTag = styled.div`
   padding: 6px 6px;
   margin-right: 2rem;
   border-radius: 6px;
+
+  @media ${(props) => props.theme.mobile} {
+    font-size: 12px;
+    padding: 4px 4px;
+    margin-right: 1rem;
+  }
 `;
 
 const TimeLine = styled.div`
@@ -63,6 +73,13 @@ const CheckCircle = styled.div`
       border: 1px solid #38d9a9;
       color: #38d9a9;
     `}
+
+  @media ${(props) => props.theme.mobile} {
+    width: 18px;
+    height: 18px;
+    font-size: 16px;
+    margin-right: 12px;
+  }
 `;
 
 const Text = styled.div`
@@ -79,6 +96,10 @@ const Text = styled.div`
     css`
       display: none;
     `}
+
+  @media ${(props) => props.theme.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const InsertForm = styled.form``;
@@ -94,6 +115,10 @@ const EditInput = styled.input`
     css`
       display: inline-block;
     `}
+
+  @media ${(props) => props.theme.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const Todo = (props) => {
