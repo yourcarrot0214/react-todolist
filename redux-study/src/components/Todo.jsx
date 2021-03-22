@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete, MdEdit } from "react-icons/md";
+import PropTypes from "prop-types";
 
 const FcButton = styled.div`
   display: flex;
@@ -206,3 +207,10 @@ const Todo = (props) => {
 };
 
 export default React.memo(Todo);
+
+Todo.propTypes = {
+  todo: PropTypes.object,
+  editTodo: PropTypes.func,
+  completeTodo: PropTypes.func,
+  removeTodo: PropTypes.func,
+};

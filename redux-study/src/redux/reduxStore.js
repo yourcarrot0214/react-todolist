@@ -1,5 +1,5 @@
-import { createStore, combineReducers } from "redux";
-import { date, todos } from "./reducers.js";
+import { createStore } from "redux";
+import { todos } from "./reducers.js";
 
 const options = {
   year: "numeric",
@@ -14,7 +14,7 @@ const initialState = {
 
 // store setup
 const store = createStore(
-  combineReducers({ date, todos }),
+  todos,
   localStorage["DayLine-store"]
     ? JSON.parse(localStorage["DayLine-store"])
     : initialState

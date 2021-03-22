@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { TodoConnecter, TodoFormConnecter } from "../redux/containers.js";
+import PropTypes from "prop-types";
 
 const TodolistContainer = styled.div`
   flex: 1;
@@ -25,3 +26,7 @@ const Todolist = ({ todos }) => {
 };
 
 export default React.memo(Todolist);
+
+Todolist.propTypes = {
+  todos: PropTypes.array,
+};

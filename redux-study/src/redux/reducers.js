@@ -3,15 +3,6 @@ import C from "./constants.js";
 const MINUTES_PER_HOUR = 60;
 const MINUTES_PER_DAY = 1440;
 
-const date = (state = "", action) => {
-  switch (action.type) {
-    case C.UPDATE_TIME:
-      return action.date;
-    default:
-      return state;
-  }
-};
-
 const lapseTime = (start, end) => {
   const startTime = start.hours * MINUTES_PER_HOUR + start.minutes;
   const endTime =
@@ -69,4 +60,4 @@ const todos = (state = [], action) => {
   }
 };
 
-export { date, todos };
+export { todos };

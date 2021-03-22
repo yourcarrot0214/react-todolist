@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { remaningPercentage } from "../modules/timeFactory.js";
+import PropTypes from "prop-types";
 
 const ClockContainer = styled.div`
   padding-top: 48px;
@@ -57,10 +58,14 @@ const Clock = (props) => {
   return (
     <ClockContainer>
       <h1>{props.date}</h1>
-      <div className="day"></div>
-      <div className="percentage"></div>
+      <div className='day'></div>
+      <div className='percentage'></div>
     </ClockContainer>
   );
 };
 
 export default React.memo(Clock);
+
+Clock.propTypes = {
+  date: PropTypes.string,
+};

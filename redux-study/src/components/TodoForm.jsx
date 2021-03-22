@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
+import PropTypes from "prop-types";
 
 const CircleButton = styled.button`
   background: #38d9a9;
@@ -118,7 +119,7 @@ const TodoForm = (props) => {
               value={text}
               onChange={onChangeValue}
               autoFocus
-              placeholder="할 일을 입력 후 Enter키를 때리세요."
+              placeholder='할 일을 입력 후 Enter키를 때리세요.'
             />
           </InsertForm>
         </InsertFormPositioner>
@@ -131,3 +132,7 @@ const TodoForm = (props) => {
 };
 
 export default React.memo(TodoForm);
+
+TodoForm.propTypes = {
+  addTodo: PropTypes.func,
+};

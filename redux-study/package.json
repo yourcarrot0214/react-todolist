@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
@@ -45,8 +46,13 @@
       "last 1 safari version"
     ]
   },
-  "type": "module",
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.22.0",
     "gh-pages": "^3.1.0"
-  }
+  },
+  "description": "Todolist + 하루 중 남은 시간을 %로 알려주는 기능을 구현했습니다.",
+  "main": ".eslintrc.js",
+  "author": "Carrot",
+  "license": "ISC"
 }
