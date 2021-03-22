@@ -24,4 +24,14 @@ module.exports = {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
   },
+  settings: {
+    react: {
+      createClass: "createReactClass",
+      pragma: "React",
+      fragment: "Fragment",
+      version: "detect",
+    },
+    propWrapperFunctions: [{ property: "myFavoriteWrapper" }],
+    linkComponents: ["Hyperlink", { name: "Link", linkAttribute: "to" }],
+  },
 };
