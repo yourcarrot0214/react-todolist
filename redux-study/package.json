@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -48,9 +48,11 @@
     ]
   },
   "devDependencies": {
+    "babel-jest": "^26.6.3",
     "eslint": "^7.22.0",
     "eslint-plugin-react": "^7.22.0",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "jest": "^26.6.0"
   },
   "description": "Todolist + 하루 중 남은 시간을 %로 알려주는 기능을 구현했습니다.",
   "main": ".eslintrc.js",
